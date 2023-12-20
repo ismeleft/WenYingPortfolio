@@ -9,11 +9,11 @@ const About = () => {
       <div>
         <p className="my-0 mx-auto p-8 w-1/2">
           With over five years of cross-domain experience as a sales assistant,
-          I've honed my skills in solving complex problems. These experiences
+          I have honed my skills in solving complex problems. These experiences
           have laid a solid foundation for my journey into front-end
           development, especially in continuous learning and tackling
-          technological challenges. Embracing the mantra 'stay hungry, stay
-          foolish,' I am constantly exploring new technologies, committed to
+          technological challenges. Embracing the mantra stay hungry, stay
+          foolish,I am constantly exploring new technologies, committed to
           ongoing growth in the tech field.
         </p>
       </div>

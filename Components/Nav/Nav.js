@@ -4,7 +4,7 @@ import Link from "next/link";
 export const Nav = () => {
   return (
     <div className="navBar flex justify-evenly mt-8">
-      <div className="navBar-siteName text-3xl font-bold">Ying's</div>
+      <div className="navBar-siteName text-3xl font-bold">Yings</div>
       <div className="navItemList flex gap-8">
         <Link href="#about">
           <div className="navItem text-xl">About</div>
