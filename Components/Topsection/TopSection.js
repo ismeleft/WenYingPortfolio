@@ -35,20 +35,27 @@ const TopSection = () => {
           </div>
           <div className="flex gap-3">
             <div className="linkedinIcon ">
-              <Image
-                src={"/linkedin-logo.png"}
-                alt="linkedin logo"
-                width={30}
-                height={30}
-              ></Image>
+              <a
+                href="https://www.linkedin.com/in/wen-ying-chen/"
+                target="_blank"
+              >
+                <Image
+                  src={"/linkedin-logo.png"}
+                  alt="linkedin logo"
+                  width={30}
+                  height={30}
+                ></Image>
+              </a>
             </div>
             <div className="gitHubIcon">
-              <Image
-                src={"/github-mark.png"}
-                alt="github logo"
-                width={30}
-                height={30}
-              ></Image>
+              <a href="https://github.com/ismeleft" target="_blank">
+                <Image
+                  src={"/github-mark.png"}
+                  alt="github logo"
+                  width={30}
+                  height={30}
+                ></Image>
+              </a>
             </div>
           </div>
         </div>
