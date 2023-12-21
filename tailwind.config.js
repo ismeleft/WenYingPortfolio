@@ -11,6 +11,17 @@ module.exports = {
       //   'gradient-conic':
       //     'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       // },
+      transitionProperty: {
+        height: "height",
+        spacing: "margin, padding",
+        border: "border-width, border-color",
+      },
+    },
+  },
+  variants: {
+    extend: {
+      // 啟用 hover 狀態的 borderWidth 變化
+      borderWidth: ["hover"],
     },
   },
   plugins: [],
