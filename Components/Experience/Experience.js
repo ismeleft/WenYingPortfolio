@@ -17,7 +17,7 @@ const Experience = () => {
           ></Image>
           <h1 className="text-2xl font-bold ">Web Trainee</h1>
           <p>
-            Jul 2023 - Present 2023 <br />
+            Jul 2023 - Dec 2023 <br />
             Wehelp Bootcamp 4th <br />
           </p>
         </div>
