@@ -6,14 +6,19 @@ const Contact = () => {
       <div className="text-center">Get in Touch </div>
       <h1 className="text-4xl font-bold text-center">Contact Me</h1>
       <div className="border rounded-3xl border-black p-2 mt-10 gap-3 w-1/4 text-center flex justify-center  items-center my-0 mx-auto ">
-        <Image
-          src={"/email.png"}
-          width={50}
-          height={50}
-          alt="email icon"
-          className="m-2"
-        ></Image>
-        <p>leftleft0813@gmail.com</p>
+        <a
+          href="mailto:leftleft0813@gmail.com"
+          className="flex justify-center  items-center"
+        >
+          <Image
+            src={"/email.png"}
+            width={50}
+            height={50}
+            alt="email icon"
+            className="m-2"
+          ></Image>
+          <p>leftleft0813@gmail.com</p>
+        </a>
       </div>
     </div>
   );

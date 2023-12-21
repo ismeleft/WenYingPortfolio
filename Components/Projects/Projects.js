@@ -21,15 +21,18 @@ const Projects = () => {
           <p>A Gratitude Journal Web Application</p>
           <div className="mt-2 flex gap-4">
             <button className="border rounded-3xl border-black p-3">
-              <a
-                target="_blank"
-                href="https://drive.google.com/file/d/1Xd_iptntto2TkMnNcn7CSqdYilWsuS6c/view?usp=sharing"
-              >
+              <a target="_blank" href="https://gratifyme.vercel.app/">
                 Live Demo
               </a>
             </button>
-            <button className="border rounded-3xl border-black p-3 bg-black text-white">
-              GitHub
+            <button className="border rounded-3xl border-black p-3 bg-black">
+              <a
+                target="_blank"
+                href="https://github.com/ismeleft/gratifyme"
+                className="text-white bg-transparent"
+              >
+                GitHub
+              </a>
             </button>
           </div>
         </div>
@@ -45,15 +48,18 @@ const Projects = () => {
           <p>An e-commerce website about Taipei tourism.</p>
           <div className="mt-2 flex gap-4">
             <button className="border rounded-3xl border-black p-3">
-              <a
-                target="_blank"
-                href="https://drive.google.com/file/d/1Xd_iptntto2TkMnNcn7CSqdYilWsuS6c/view?usp=sharing"
-              >
+              <a target="_blank" href="http://52.192.139.251:3000/">
                 Live Demo
               </a>
             </button>
-            <button className="border rounded-3xl border-black p-3 bg-black text-white">
-              GitHub
+            <button className="border rounded-3xl border-black p-3 bg-black">
+              <a
+                target="_blank"
+                href="https://github.com/ismeleft/taipei-day-trip"
+                className="text-white bg-transparent"
+              >
+                GitHub
+              </a>
             </button>
           </div>
         </div>

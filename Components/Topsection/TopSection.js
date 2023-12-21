@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const TopSection = () => {
   return (
@@ -26,8 +27,10 @@ const TopSection = () => {
                 Download CV
               </a>
             </button>
-            <button className="border rounded-3xl border-black p-3 bg-black text-white">
-              Contact Info
+            <button className="border rounded-3xl border-black p-3 bg-black">
+              <a href="#contact" className="text-white bg-transparent">
+                Contact Info
+              </a>
             </button>
           </div>
           <div className="flex gap-3">
