@@ -1,30 +1,48 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Link from "next/link";
 
 export const Nav = () => {
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+
   return (
-    <div className="navBar flex  p-8  items-center justify-evenly w-full">
-      <div className="navBar-siteName text-3xl font-bold mr-6">
-        <Link href={"/"}>Yings</Link>
+    <div className="navBar flex flex-col sm:flex-row p-8 items-center justify-between w-full">
+      <div className="flex justify-between items-center w-full sm:w-auto">
+        <div className="navBar-siteName text-3xl font-bold">
+          <Link href={"/"}>
+            <div className="cursor-pointer">Yings</div>
+          </Link>
+        </div>
+        <button
+          className="text-3xl sm:hidden"
+          onClick={() => setIsNavExpanded(!isNavExpanded)}
+        >
+          &#9776;
+        </button>
       </div>
-      <div className="navItemList flex gap-8">
+      <div
+        className={`navItemList ${
+          isNavExpanded ? "flex" : "hidden"
+        } flex-col sm:flex sm:flex-row gap-8 w-full sm:w-auto`}
+      >
         <Link href="#about">
-          <div className="navItem text-xl hover:underline decoration-2 decoration-transparent hover:decoration-black transition-decoration duration-500 ease-in-out">
+          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
             About
           </div>
         </Link>
         <Link href="#experience">
-          <div className="navItem text-xl hover:underline decoration-2 decoration-transparent hover:decoration-black transition-decoration duration-500 ease-in-out">
+          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
             Experience
           </div>
         </Link>
         <Link href="#projects">
-          <div className="navItem text-xl hover:underline decoration-2 decoration-transparent hover:decoration-black transition-decoration duration-500 ease-in-out">
+          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
             Projects
           </div>
         </Link>
         <Link href="#contact">
-          <div className="navItem text-xl hover:underline decoration-2 decoration-transparent hover:decoration-black transition-decoration duration-500 ease-in-out">
+          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
             Contact
           </div>
         </Link>

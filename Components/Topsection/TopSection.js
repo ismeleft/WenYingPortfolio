@@ -4,22 +4,25 @@ import Link from "next/link";
 
 const TopSection = () => {
   return (
-    <>
-      <div className="flex  items-center p-48 justify-evenly">
+    <div className="h-screen flex  items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48">
+      <div className="flex flex-col gap-20 sm:flex-row items-center justify-evenly">
         <Image
           src={"/plumeria.png"}
           width={250}
           height={250}
           alt="flower"
-        ></Image>
+          className="mb-4 sm:mb-0"
+        />
         <div className="profile flex flex-col items-center gap-4">
-          <div className="text-xl">Hello, I am</div>
-          <div className="text-5xl font-bold ">Wen Ying</div>
-          <div className="text-3xl font-bold text-gray-600">
+          <div className="text-lg sm:text-xl md:text-2xl">Hello, I am</div>
+          <div className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            Wen Ying
+          </div>
+          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-600">
             Frontend Developer
           </div>
-          <div className="mt-2 flex gap-4">
-            <button className="border rounded-3xl border-black p-3">
+          <div className="mt-2 flex  gap-4">
+            <button className="border rounded-full border-black px-6 py-2 text-sm sm:text-base">
               <a
                 target="_blank"
                 href="https://drive.google.com/file/d/1Xd_iptntto2TkMnNcn7CSqdYilWsuS6c/view?usp=sharing"
@@ -27,40 +30,36 @@ const TopSection = () => {
                 Download CV
               </a>
             </button>
-            <button className="border rounded-3xl border-black p-3 bg-black">
+            <button className="border rounded-full border-black px-6 py-2 text-sm sm:text-base bg-black">
               <a href="#contact" className="text-white bg-transparent">
                 Contact Info
               </a>
             </button>
           </div>
           <div className="flex gap-3">
-            <div className="linkedinIcon ">
-              <a
-                href="https://www.linkedin.com/in/wen-ying-chen/"
-                target="_blank"
-              >
-                <Image
-                  src={"/linkedin-logo.png"}
-                  alt="linkedin logo"
-                  width={30}
-                  height={30}
-                ></Image>
-              </a>
-            </div>
-            <div className="gitHubIcon">
-              <a href="https://github.com/ismeleft" target="_blank">
-                <Image
-                  src={"/github-mark.png"}
-                  alt="github logo"
-                  width={30}
-                  height={30}
-                ></Image>
-              </a>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/wen-ying-chen/"
+              target="_blank"
+            >
+              <Image
+                src={"/linkedin-logo.png"}
+                alt="LinkedIn icon"
+                width={30}
+                height={30}
+              />
+            </a>
+            <a href="https://github.com/ismeleft" target="_blank">
+              <Image
+                src={"/github-mark.png"}
+                alt="GitHub icon"
+                width={30}
+                height={30}
+              />
+            </a>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
