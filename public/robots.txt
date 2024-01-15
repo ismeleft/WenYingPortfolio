@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://wen-ying-portfolio.vercel.app/
+
+# Sitemaps
+Sitemap: https://wen-ying-portfolio.vercel.app/sitemap.xml
