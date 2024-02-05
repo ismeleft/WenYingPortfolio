@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { db } from "../../lib/firebase/index"; // 引入你的 Firebase 配置
+import firebase from "../../lib/firebase/index";
 
 export default function AddPost() {
   const [title, setTitle] = useState("");
@@ -10,7 +10,7 @@ export default function AddPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // 在 Firestore 中添加新文章
-    await db.collection("posts").add({
+    await firebase.db.collection("posts").add({
       title,
       content,
       createdAt: new Date(),
