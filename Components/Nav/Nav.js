@@ -27,22 +27,27 @@ export const Nav = () => {
         } flex-col sm:flex sm:flex-row gap-8 w-full sm:w-auto`}
       >
         <Link href="#about">
-          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
+          <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             About
           </div>
         </Link>
         <Link href="#experience">
-          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
+          <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Experience
           </div>
         </Link>
         <Link href="#projects">
-          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
+          <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Projects
           </div>
         </Link>
+
+        <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
+          Blog
+        </div>
+
         <Link href="#contact">
-          <div className="navItem text-xl cursor-pointer hover:underline decoration-2 decoration-transparent hover:decoration-black transition-all duration-300 ease-in-out">
+          <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Contact
           </div>
         </Link>

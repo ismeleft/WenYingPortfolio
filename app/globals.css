@@ -17,3 +17,9 @@ button {
 button:hover {
   transform: scale(1.1);
 }
+
+.hover-underline-offset:hover {
+  text-decoration: underline 4px;
+  text-decoration-color: rgb(119, 138, 171);
+  text-underline-offset: 8px;
+}
