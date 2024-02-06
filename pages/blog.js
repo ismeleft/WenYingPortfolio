@@ -22,8 +22,8 @@ const Blog = () => {
   }, []);
 
   return (
-    <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <h1 className="p-8 text-2xl font-bold">Blog Posts</h1>
+    <div style={{ maxWidth: "1200px", margin: "64px auto 0 auto" }}>
+      <h1 className="text-2xl font-bold p-3">Blog Posts</h1>
       {posts.map((post) => (
         <div key={post.id} className="p-8">
           <div className={styles.postInfo}>

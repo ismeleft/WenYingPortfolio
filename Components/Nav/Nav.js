@@ -7,7 +7,7 @@ export const Nav = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <div className="flex justify-center w-full fixed top-0 left-0">
+    <div className="flex justify-center w-full fixed top-0 left-0 h-12">
       <div
         className="navBar flex flex-col sm:flex-row p-3 items-center justify-between"
         style={{ maxWidth: "1200px", width: "100%" }}
