@@ -26,7 +26,7 @@ const Post = () => {
   if (!post) return <div>Loading...</div>;
 
   return (
-    <div className="p-8">
+    <div className="p-8" style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <p>{new Date(post.createdAt.seconds * 1000).toLocaleDateString()}</p>
       <h1>{post.title}</h1>
       <p>{post.content}</p>
