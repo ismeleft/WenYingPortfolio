@@ -26,7 +26,7 @@ export const Nav = () => {
           isNavExpanded ? "flex" : "hidden"
         } flex-col sm:flex sm:flex-row gap-8 w-full sm:w-auto`}
       >
-        <Link href="#about">
+        {/* <Link href="#about">
           <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             About
           </div>
@@ -40,18 +40,18 @@ export const Nav = () => {
           <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Projects
           </div>
-        </Link>
+        </Link> */}
         <Link href="/blog">
           <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Blog
           </div>
         </Link>
-
+        {/* 
         <Link href="#contact">
           <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Contact
           </div>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

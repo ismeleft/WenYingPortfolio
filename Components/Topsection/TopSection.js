@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const TopSection = () => {
   return (
-    <div className="h-screen flex  items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48">
-      <div className="flex flex-col gap-20 sm:flex-row items-center justify-evenly">
+    <div className=" h-screen flex  items-center justify-center px-4 sm:px-8 md:px-16 lg:px-24 xl:px-48">
+      <div className="flex flex-col gap-10 sm:flex-row items-center justify-evenly">
         <Image
           src={"/plumeria.png"}
           width={250}
