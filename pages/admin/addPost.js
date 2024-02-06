@@ -1,42 +1,67 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import firebase from "../../lib/firebase/index";
+import { db } from "../../lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
+import styles from "../../styles/pages.module.css";
 
 export default function AddPost() {
+  const [slug, setSlug] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // 在 Firestore 中添加新文章
-    await firebase.db.collection("posts").add({
-      title,
-      content,
-      createdAt: new Date(),
-    });
-    // 提交後導航到文章列表或首頁
-    router.push("/"); // 或其他頁面，如 `/posts`
+    try {
+      const docRef = await addDoc(collection(db, "posts"), {
+        title,
+        content,
+        createdAt: new Date(),
+      });
+      console.log("Document written with ID: ", docRef.id);
+      router.push("/");
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   };
 
   return (
-    <div>
-      <h1>添加新文章</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="p-8">
+      <h1 className="text-3xl p-3">Add New Post 🙂</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col items-center gap-4"
+      >
         <input
+          className="w-full p-2 border border-gray-300 rounded-md"
+          type="text"
+          value={slug}
+          onChange={(e) => setSlug(e.target.value)}
+          placeholder="URL Slug"
+          required
+        />
+        <input
+          className="w-full p-2 border border-gray-300 rounded-md"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          placeholder="標題"
+          placeholder="Title"
           required
         />
         <textarea
+          className="w-full p-2 border border-gray-300 rounded-md h-32"
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="內容"
+          placeholder="Content"
           required
         ></textarea>
-        <button type="submit">發布文章</button>
+        <button
+          className="px-4 py-2 bg-blue-500 text-black  rounded hover:bg-blue-700 transition-colors"
+          type="submit"
+        >
+          Post
+        </button>
       </form>
     </div>
   );

@@ -1,0 +1,12 @@
+.postInfo {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* .blogPageTitile {
+  font-size: 30px;
+  padding: 10px;
+  font-weight: 700;
+} */

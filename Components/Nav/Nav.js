@@ -41,10 +41,11 @@ export const Nav = () => {
             Projects
           </div>
         </Link>
-
-        <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
-          Blog
-        </div>
+        <Link href="/blog">
+          <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
+            Blog
+          </div>
+        </Link>
 
         <Link href="#contact">
           <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
