@@ -24,19 +24,21 @@ const Blog = () => {
 
   return (
     <div className="p-3" style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <h1 className="text-2xl font-bold">Blog Posts</h1>
-      {posts.map((post) => (
-        <div key={post.id} className="p-8">
-          <div className={styles.postInfo}>
-            <p>
-              {new Date(post.createdAt.seconds * 1000).toLocaleDateString()}
-            </p>
-            <h3>{post.title}</h3>
+      <div className="p-6 h-screen bg-slate-50/50 shadow-lg rounded-lg">
+        <h1 className="text-2xl font-bold bg-slate-50/50">Blog Posts</h1>
+        {posts.map((post) => (
+          <div key={post.id} className="p-8">
+            <div className={styles.postInfo}>
+              <p>
+                {new Date(post.createdAt.seconds * 1000).toLocaleDateString()}
+              </p>
+              <h3>{post.title}</h3>
+            </div>
+            <Link href={`/blog/${post.id}`}>Read more...</Link>
+            <hr />
           </div>
-          <Link href={`/blog/${post.id}`}>Read more...</Link>
-          <hr />
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
