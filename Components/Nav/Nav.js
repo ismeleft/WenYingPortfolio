@@ -7,8 +7,8 @@ export const Nav = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <div className="flex justify-center h-12 p-3 mx-auto max-w-[1200px] relative">
-      <div className="flex justify-between items-center w-full z-20">
+    <nav className="flex justify-center items-center h-12 p-3 mx-auto max-w-[1200px]">
+      <div className="flex justify-between items-center w-full">
         <Link href={"/"}>
           <div className="text-3xl font-bold cursor-pointer">Yings</div>
         </Link>
@@ -22,19 +22,19 @@ export const Nav = () => {
       <div
         className={`${
           isNavExpanded ? "flex" : "hidden"
-        } absolute sm:relative z-10 flex-col sm:flex sm:flex-row gap-8 p-6 w-full  sm:bg-transparent sm:h-auto top-12 left-0`}
+        } sm:flex flex-col sm:flex-row items-center gap-8 w-full sm:justify-end p-6 absolute sm:static top-12 left-0 sm:bg-transparent`}
       >
         <Link href="/blog">
-          <div className="navItem text-xl cursor-pointer transition-all duration-300 ease-in-out">
+          <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Blog
           </div>
         </Link>
         <Link href="/changelog">
-          <div className="navItem text-xl cursor-pointer transition-all duration-300 ease-in-out">
+          <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Changelog
           </div>
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };
