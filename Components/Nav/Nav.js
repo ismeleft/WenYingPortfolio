@@ -7,13 +7,11 @@ export const Nav = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <div className="flex justify-center h-12 p-3 mx-auto max-w-[1200px]">
-      <div className="flex justify-between items-center w-full">
-        <div className="text-3xl font-bold">
-          <Link href={"/"}>
-            <div className="cursor-pointer">Yings</div>
-          </Link>
-        </div>
+    <div className="flex justify-center h-12 p-3 mx-auto max-w-[1200px] relative">
+      <div className="flex justify-between items-center w-full z-20">
+        <Link href={"/"}>
+          <div className="text-3xl font-bold cursor-pointer">Yings</div>
+        </Link>
         <button
           className="text-3xl sm:hidden"
           onClick={() => setIsNavExpanded(!isNavExpanded)}
@@ -22,17 +20,17 @@ export const Nav = () => {
         </button>
       </div>
       <div
-        className={`navItemList ${
+        className={`${
           isNavExpanded ? "flex" : "hidden"
-        } flex-col sm:flex sm:flex-row gap-8 pt-3 sm:pt-0`}
+        } absolute sm:relative z-10 flex-col sm:flex sm:flex-row gap-8 p-6 w-full  sm:bg-transparent sm:h-auto top-12 left-0`}
       >
         <Link href="/blog">
-          <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
+          <div className="navItem text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Blog
           </div>
         </Link>
         <Link href="/changelog">
-          <div className="navItem hover-underline-offset text-xl cursor-pointer transition-all duration-300 ease-in-out">
+          <div className="navItem text-xl cursor-pointer transition-all duration-300 ease-in-out">
             Changelog
           </div>
         </Link>
