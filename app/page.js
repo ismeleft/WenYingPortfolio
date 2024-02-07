@@ -9,14 +9,13 @@ import Contact from "@/Components/Contact/Contact";
 
 export default function Home() {
   return (
-    <>
-      <Nav />
+    <div className="mx-auto max-w-[1200px]">
       <TopSection />
       <About />
       <Experience />
       <Projects />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }

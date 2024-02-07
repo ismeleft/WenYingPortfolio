@@ -1,5 +1,5 @@
-// app/layout.js
 import "./globals.css";
+import { Nav } from "@/Components/Nav/Nav";
 
 export const metadata = {
   title: "Wen Ying Portfolio",
@@ -18,7 +18,10 @@ export default function RootLayout({ children }) {
           content="no4Ae9fa8OqKLKQbgbxSZDOV70KT0whcMFc6Vbv3j4U"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }

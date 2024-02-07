@@ -1,8 +1,9 @@
+"use client";
+
 import { useState } from "react";
-import { useRouter } from "next/router";
-import { db } from "../../lib/firebase";
+import { useRouter } from "next/navigation";
+import { db } from "../../../lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import styles from "../../styles/pages.module.css";
 
 export default function AddPost() {
   const [slug, setSlug] = useState("");
@@ -27,7 +28,7 @@ export default function AddPost() {
   };
 
   return (
-    <div className="p-8">
+    <div className="p-8 mx-auto max-w-[1200px]">
       <h1 className="text-3xl p-3">Add New Post 🙂</h1>
       <form
         onSubmit={handleSubmit}
