@@ -28,7 +28,7 @@ const Blog = () => {
         <h1 className="text-2xl font-bold bg-slate-50/50">Blog Posts</h1>
         {posts.map((post) => (
           <div key={post.id} className="p-8">
-            <div className={styles.postInfo}>
+            <div>
               <p>
                 {new Date(post.createdAt.seconds * 1000).toLocaleDateString()}
               </p>
