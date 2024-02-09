@@ -8,12 +8,11 @@ import { doc, getDoc } from "firebase/firestore";
 const Post = () => {
   const [post, setPost] = useState(null);
   const router = useRouter();
-  const { id } = router.query;
-
+  const { slug } = router.query;
   useEffect(() => {
     const fetchPost = async () => {
-      if (id) {
-        const postDoc = doc(db, "posts", id);
+      if (slug) {
+        const postDoc = doc(db, "posts", slug);
         const postData = await getDoc(postDoc);
         if (postData.exists()) {
           setPost({ id: postData.id, ...postData.data() });
@@ -23,7 +22,7 @@ const Post = () => {
     };
 
     fetchPost();
-  }, [id]);
+  }, [slug]);
 
   if (!post) return <div>Loading...</div>;
 

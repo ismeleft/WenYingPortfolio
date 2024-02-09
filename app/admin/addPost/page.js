@@ -15,13 +15,21 @@ export default function AddPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const docRef = await addDoc(collection(db, "posts"), {
+      const slugRef = doc(db, "posts", slug);
+      const slugSnap = await getDoc(slugRef);
+
+      if (slugSnap.exists()) {
+        console.error("Slug already exists. Choose a different one.");
+        return;
+      }
+
+      await setDoc(slugRef, {
         title,
         content,
         createdAt: new Date(),
       });
-      console.log("Document written with ID: ", docRef.id);
-      router.push("/");
+
+      router.push(`/blog/${slug}`);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
