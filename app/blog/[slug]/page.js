@@ -50,7 +50,7 @@ const Post = ({ params }) => {
 
   return (
     <div
-      className="post-content"
+      className="post-content p-3"
       style={{ maxWidth: "1200px", margin: "0 auto" }}
     >
       <div className="flex mt-6 items-center">
