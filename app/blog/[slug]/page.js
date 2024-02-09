@@ -8,8 +8,9 @@ import { doc, getDoc } from "firebase/firestore";
 const Post = () => {
   const [post, setPost] = useState(null);
   const router = useRouter();
-  const { slug } = router.query;
+
   useEffect(() => {
+    const { slug } = router.query;
     const fetchPost = async () => {
       if (slug) {
         const postDoc = doc(db, "posts", slug);
@@ -22,7 +23,7 @@ const Post = () => {
     };
 
     fetchPost();
-  }, [slug]);
+  }, [router.query]);
 
   if (!post) return <div>Loading...</div>;
 
