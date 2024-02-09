@@ -1,13 +1,12 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import { db } from "../../../lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
+import { marked } from "marked";
 
 const Post = ({ params }) => {
-  // 接收 params prop
   const [post, setPost] = useState(null);
-  const { slug } = params; // 從 params 解構 slug
+  const { slug } = params;
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -30,12 +29,17 @@ const Post = ({ params }) => {
     };
 
     fetchPost();
-  }, [slug]); // 依賴 slug 變化
+  }, [slug]);
+
+  const createMarkup = (markdownContent) => {
+    return { __html: marked(markdownContent) };
+  };
 
   if (!post)
     return (
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>Loading...</div>
     );
+
   if (!post.title || !post.content) {
     return (
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
@@ -45,10 +49,16 @@ const Post = ({ params }) => {
   }
 
   return (
-    <div className="p-8" style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <p>{post.createdAt && post.createdAt.toLocaleDateString()}</p>
-      <h1>{post.title}</h1>
-      <p>{post.content}</p>
+    <div
+      className="post-content"
+      style={{ maxWidth: "1200px", margin: "0 auto" }}
+    >
+      <div className="flex mt-6 items-center">
+        <h1 className="mr-3">{post.title}</h1>
+        <p>{post.createdAt.toLocaleDateString()}</p>
+      </div>
+      <br />
+      <div dangerouslySetInnerHTML={createMarkup(post.content)} />
     </div>
   );
 };

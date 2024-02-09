@@ -28,3 +28,8 @@ hr {
   width: 90%;
   margin: 10px 0px;
 }
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
