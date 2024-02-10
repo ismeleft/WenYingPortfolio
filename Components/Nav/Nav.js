@@ -24,16 +24,20 @@ export const Nav = () => {
           isNavExpanded ? "flex" : "hidden"
         } sm:flex flex-col sm:flex-row items-center gap-8 w-full sm:justify-end p-6 absolute sm:static top-12 left-0 sm:bg-transparent`}
       >
-        <Link href="/blog">
-          <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
-            Blog
-          </div>
-        </Link>
-        <Link href="/changelog">
-          <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
-            Changelog
-          </div>
-        </Link>
+        <button className="hover:text-red-600">
+          <Link href="/blog">
+            <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
+              Blog
+            </div>
+          </Link>
+        </button>
+        <button className="hover:text-red-600">
+          <Link href="/changelog">
+            <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
+              Changelog
+            </div>
+          </Link>
+        </button>
       </div>
     </nav>
   );
