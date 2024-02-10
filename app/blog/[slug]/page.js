@@ -50,12 +50,17 @@ const Post = ({ params }) => {
 
   return (
     <div
-      className="post-content p-3"
-      style={{ maxWidth: "1200px", margin: "0 auto" }}
+      className="post-content p-3 "
+      style={{
+        maxWidth: "1200px",
+        margin: "0 auto",
+        width: "70%",
+        lineHeight: "30px",
+      }}
     >
-      <div className="flex mt-6 items-center">
-        <h1 className="mr-3">{post.title}</h1>
-        <p>{post.createdAt.toLocaleDateString()}</p>
+      <div className="flex mt-6 items-center ">
+        <h1 className="mr-3 ">{post.title}</h1>
+        <h3>{post.createdAt.toLocaleDateString()}</h3>
       </div>
       <br />
       <div dangerouslySetInnerHTML={createMarkup(post.content)} />

@@ -27,18 +27,23 @@ const Blog = () => {
       <div className="p-6 h-screen bg-slate-50/50 shadow-lg rounded-lg">
         <h1 className="text-2xl font-bold bg-slate-50/50">Blog Posts</h1>
         {posts.map((post) => (
-          <div key={post.id} className="p-8">
-            <div>
-              <p>
+          <div key={post.id} className="mt-3 bg-slate-50/50">
+            <div className="bg-slate-50/50 flex gap-3">
+              <h3 className="bg-slate-50/50">
                 {post.createdAt &&
                   new Date(post.createdAt.seconds * 1000).toLocaleDateString()}
-              </p>
-              <h3>{post.title}</h3>
+              </h3>
+              <h3 className="bg-slate-50/50">{post.title}</h3>
             </div>
             {post.slug ? (
-              <Link href={`/blog/${post.slug}`}>Read more...</Link>
+              <Link
+                className="bg-slate-50/50 hover:text-blue-600"
+                href={`/blog/${post.slug}`}
+              >
+                Read more...
+              </Link>
             ) : (
-              <span>Unavailable</span>
+              <span className="bg-slate-50/50 ">Unavailable</span>
             )}
             <hr />
           </div>
