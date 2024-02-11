@@ -6,6 +6,10 @@ import Link from "next/link";
 export const Nav = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
+  const handleNavLinkClick = () => {
+    setIsNavExpanded(false);
+  };
+
   return (
     <nav className="flex justify-center items-center h-12 p-3 mx-auto max-w-[1200px]">
       <div className="flex justify-between items-center w-full">
@@ -24,14 +28,14 @@ export const Nav = () => {
           isNavExpanded ? "flex" : "hidden"
         } sm:flex flex-col sm:flex-row items-center gap-8 w-full sm:justify-end p-6 absolute sm:static top-12 left-0 sm:bg-transparent`}
       >
-        <button className="hover:text-red-600">
+        <button className="hover:text-red-600" onClick={handleNavLinkClick}>
           <Link href="/blog">
             <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
               Blog
             </div>
           </Link>
         </button>
-        <button className="hover:text-red-600">
+        <button className="hover:text-red-600" onClick={handleNavLinkClick}>
           <Link href="/changelog">
             <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
               Changelog
