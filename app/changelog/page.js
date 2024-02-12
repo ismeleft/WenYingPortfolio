@@ -6,7 +6,7 @@ const changelog = () => {
   return (
     <div className="mx-auto max-w-[1200px] p-3">
       <div className="p-6 h-screen bg-slate-50/50 shadow-lg rounded-lg">
-        <ul className="list-disc m-3">
+        <ul className="list-disc mt-20">
           <li className="bg-slate-50/50 ">2024-2-7 Change Website Layout</li>
         </ul>
       </div>

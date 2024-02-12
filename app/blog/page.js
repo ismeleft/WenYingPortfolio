@@ -25,7 +25,7 @@ const Blog = () => {
   return (
     <div className="p-3" style={{ maxWidth: "1200px", margin: "0 auto" }}>
       <div className="p-6 h-screen bg-slate-50/50 shadow-lg rounded-lg">
-        <h1 className="text-2xl font-bold bg-slate-50/50">Blog Posts</h1>
+        <h1 className="text-2xl font-bold bg-slate-50/50 mt-10">Blog Posts</h1>
         {posts.map((post) => (
           <div key={post.id} className="mt-3 bg-slate-50/50">
             <div className="bg-slate-50/50 flex gap-3">

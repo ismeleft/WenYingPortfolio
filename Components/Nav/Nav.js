@@ -4,44 +4,20 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 export const Nav = () => {
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
-
-  const handleNavLinkClick = () => {
-    setIsNavExpanded(false);
-  };
-
   return (
-    <nav className="flex justify-center items-center h-12 p-3 mx-auto max-w-[1200px]">
-      <div className="flex justify-between items-center w-full">
-        <Link href={"/"}>
-          <div className="text-3xl font-bold cursor-pointer">Yings</div>
-        </Link>
-        <button
-          className="text-3xl sm:hidden"
-          onClick={() => setIsNavExpanded(!isNavExpanded)}
-        >
-          &#9776;
-        </button>
-      </div>
-      <div
-        className={`${
-          isNavExpanded ? "flex" : "hidden"
-        } sm:flex flex-col sm:flex-row items-center gap-8 w-full sm:justify-end p-6 absolute sm:static top-12 left-0 sm:bg-transparent`}
-      >
-        <button className="hover:text-red-600" onClick={handleNavLinkClick}>
-          <Link href="/blog">
-            <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
-              Blog
-            </div>
-          </Link>
-        </button>
-        <button className="hover:text-red-600" onClick={handleNavLinkClick}>
-          <Link href="/changelog">
-            <div className="text-xl cursor-pointer transition-all duration-300 ease-in-out">
-              Changelog
-            </div>
-          </Link>
-        </button>
+    <nav className="fixed top-0 left-0 right-0 z-10 mx-auto max-w-[1200px] px-8 py-3">
+      <div className="flex items-center justify-between">
+        <h1 className="cursor-pointer">
+          <Link href={"/"}>Yings</Link>
+        </h1>
+        <div>
+          <button className="mr-4 text-xl cursor-pointer hover:text-red-600">
+            <Link href={"/blog"}>Blog</Link>
+          </button>
+          <button className="text-xl cursor-pointer hover:text-red-600">
+            <Link href={"/changelog"}>Changelog</Link>
+          </button>
+        </div>
       </div>
     </nav>
   );
