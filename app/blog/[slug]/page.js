@@ -58,7 +58,7 @@ const Post = ({ params }) => {
         lineHeight: "30px",
       }}
     >
-      <div className="flex mt-6 items-center ">
+      <div className="flex mt-20 items-center ">
         <h1 className="mr-3 ">{post.title}</h1>
         <h3>{post.createdAt.toLocaleDateString()}</h3>
       </div>
