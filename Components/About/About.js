@@ -34,7 +34,7 @@ const About = () => {
             Departmemt of Psychology
           </p>
         </div>
-        <div className="border rounded-3xl border-black  py-3 px-6  text-center flex flex-col items-center">
+        <div className="border rounded-3xl border-black py-3 px-6 text-center flex flex-col items-center">
           <Image
             src={"/skills.png"}
             width={25}
@@ -44,7 +44,7 @@ const About = () => {
           ></Image>
 
           <h1 className="text-xl font-bold text-center">Skills</h1>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <div>
               <h1 className="font-bold">Frontend</h1>
               <p>
