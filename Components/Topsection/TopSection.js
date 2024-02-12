@@ -11,7 +11,7 @@ const TopSection = () => {
           width={250}
           height={250}
           alt="flower"
-          className="mb-4 sm:mb-0"
+          className="mb-4 sm:mb-0 mt-20"
         />
         <div className="profile flex flex-col items-center gap-4">
           <div className="text-lg sm:text-xl md:text-2xl">Hello, I am</div>
