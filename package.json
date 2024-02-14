@@ -10,7 +10,9 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
     "firebase": "^10.8.0",
+    "github-markdown-css": "^5.5.1",
     "gray-matter": "^4.0.3",
     "markdown-it": "^14.0.0",
     "marked": "^12.0.0",
