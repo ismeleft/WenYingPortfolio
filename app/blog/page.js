@@ -1,56 +1,45 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { db } from "../../lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import Link from "next/link";
 
-const Blog = () => {
-  const [posts, setPosts] = useState([]);
+const postsDirectory = path.join(process.cwd(), "app/posts");
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const postsCollection = collection(db, "posts");
-      const postsSnapshot = await getDocs(postsCollection);
-      const postsList = postsSnapshot.docs.map((doc) => ({
-        slug: doc.id,
-        ...doc.data(),
-      }));
-      setPosts(postsList);
+async function getPosts() {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const posts = fileNames.map((fileName) => {
+    const slug = fileName.replace(/\.md$/, "");
+    const fullPath = path.join(postsDirectory, fileName);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+    const { data } = matter(fileContents);
+
+    return {
+      slug,
+      ...data,
     };
+  });
 
-    fetchPosts();
-  }, []);
+  return posts;
+}
+
+export default async function BlogPage() {
+  const posts = await getPosts();
 
   return (
-    <div className="p-3" style={{ maxWidth: "1200px", margin: "0 auto" }}>
-      <div className="mt-10 p-6 h-screen shadow-lg rounded-lg">
-        <h1 className="text-2xl font-bold">Blog Posts</h1>
-        {posts.map((post) => (
-          <div key={post.id} className="mt-3">
-            <div className=" flex gap-3">
-              <h3 className="">
-                {post.createdAt &&
-                  new Date(post.createdAt.seconds * 1000).toLocaleDateString()}
-              </h3>
-              <h3 className="">{post.title}</h3>
-            </div>
-            {post.slug ? (
-              <Link
-                className=" hover:text-blue-600"
-                href={`/blog/${post.slug}`}
-              >
-                Read more...
-              </Link>
-            ) : (
-              <span className=" ">Unavailable</span>
-            )}
-            <hr />
+    <div className="p-8 mx-auto max-w-[1200px] h-screen">
+      <h1 className="mt-10 mb-3 ">Blog Posts</h1>
+      <hr />
+      {posts.map((post) => (
+        <div key={post.slug}>
+          <div className="flex items-center gap-2 mb-2">
+            <h3 className="mr-3">{post.title}</h3>
+            <div>{post.date}</div>
           </div>
-        ))}
-      </div>
+          <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
+            <div className="hover:text-blue-700">Read more ...</div>
+          </Link>
+        </div>
+      ))}
     </div>
   );
-};
-
-export default Blog;
+}

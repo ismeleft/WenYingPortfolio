@@ -1,71 +1,30 @@
-"use client";
-import { useEffect, useState } from "react";
-import { db } from "../../../lib/firebase";
-import { doc, getDoc } from "firebase/firestore";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 import { marked } from "marked";
 
-const Post = ({ params }) => {
-  const [post, setPost] = useState(null);
-  const { slug } = params;
+const postsDirectory = path.join(process.cwd(), "app/posts");
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      console.log("Slug from props:", slug);
-      if (slug) {
-        const postDoc = doc(db, "posts", slug);
-        const postData = await getDoc(postDoc);
-        if (postData.exists()) {
-          const data = postData.data();
-          setPost({
-            id: postData.id,
-            ...data,
-            createdAt: data.createdAt.toDate(),
-          });
-        } else {
-          console.log("No such document!");
-          setPost(null);
-        }
-      }
-    };
+async function getPostData(slug) {
+  const fullPath = path.join(postsDirectory, `${slug}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+  const htmlContent = marked(content);
 
-    fetchPost();
-  }, [slug]);
-
-  const createMarkup = (markdownContent) => {
-    return { __html: marked(markdownContent) };
+  return {
+    ...data,
+    content: htmlContent,
   };
+}
 
-  if (!post)
-    return (
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>Loading...</div>
-    );
-
-  if (!post.title || !post.content) {
-    return (
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        Post not found or is missing some information.
-      </div>
-    );
-  }
+export default async function PostPage({ params }) {
+  const { slug } = params;
+  const post = await getPostData(slug);
 
   return (
     <div
-      className="post-content p-3 "
-      style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-        width: "70%",
-        lineHeight: "30px",
-      }}
-    >
-      <div className="flex mt-20 items-center ">
-        <h1 className="mr-3 ">{post.title}</h1>
-        <h3>{post.createdAt.toLocaleDateString()}</h3>
-      </div>
-      <br />
-      <div dangerouslySetInnerHTML={createMarkup(post.content)} />
-    </div>
+      className="mx-auto max-w-[1200px] mt-20 w-10/12 p-8 h-screen"
+      dangerouslySetInnerHTML={{ __html: post.content }}
+    />
   );
-};
-
-export default Post;
+}
