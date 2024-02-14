@@ -26,7 +26,7 @@ export default async function BlogPage() {
   const posts = await getPosts();
 
   return (
-    <div className="p-8 mx-auto max-w-[1200px] h-screen">
+    <div className="p-8 mx-auto max-w-[1200px] h-screen w-10/12">
       <h1 className="mt-10 mb-3 ">Blog Posts</h1>
       <hr />
       {posts.map((post) => (

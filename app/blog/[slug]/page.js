@@ -23,7 +23,7 @@ export default async function PostPage({ params }) {
 
   return (
     <div
-      className="mx-auto max-w-[1200px] mt-20 w-10/12 p-8 h-screen"
+      className="mx-auto max-w-[1200px] mt-10 w-10/12 p-8 h-screen"
       dangerouslySetInnerHTML={{ __html: post.content }}
     />
   );
