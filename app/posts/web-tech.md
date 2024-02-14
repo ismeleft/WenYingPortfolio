@@ -1,5 +1,9 @@
 ---
 title: "Portfolio 網站技術要覽"
+description: "以下是有關這個網站的技術概覽：
+- Next.js App Router
+- Tailwind CSS
+目前沒有仰賴任何 blog template，先嘗試手做看看！"
 date: "2024-2-14"
 tags: []
 ---

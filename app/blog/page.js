@@ -31,13 +31,15 @@ export default async function BlogPage() {
       <hr />
       {posts.map((post) => (
         <div key={post.slug}>
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
             <h3 className="mr-3">{post.title}</h3>
             <div>{post.date}</div>
+            <p>{post.description}</p>
           </div>
           <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
             <div className="hover:text-blue-700">Read more ...</div>
           </Link>
+          <hr />
         </div>
       ))}
     </div>
