@@ -8,7 +8,7 @@ tags: []
 以下是有關這個網站的技術概覽：
 
 - Next.js App Router
-- Tailwinds
+- Tailwind CSS
 
 
 目前沒有仰賴任何 blog template，先嘗試手做看看！
