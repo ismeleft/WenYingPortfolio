@@ -3,7 +3,7 @@ title: "Portfolio 網站技術要覽"
 date: "2024-2-14"
 tags: []
 ---
-![Photo by Glenn Carstens-Peters on Unsplash](https://github.com/ismeleft/WenYingPortfolio/assets/76611330/9d0f23b8-16c2-4fc9-bad3-ac1ba5ebdf13)
+![Photo by Glenn Carstens-Peters on Unsplash](https://github.com/ismeleft/WenYingPortfolio/assets/76611330/7f18b9c2-ad1f-4d01-b197-1080285a25da)
 
 以下是有關這個網站的技術概覽：
 
@@ -16,8 +16,6 @@ tags: []
 原本打算做一個簡易的SPA網站，單純地像網頁版的履歷，後來想想如果可以把某些東西記錄下來，或是覺得比較有趣、想研究的部分整理起來分享出去，應該還不錯。
 
 過去幾年，還沒有學習寫程式的時候我都是用 Ｗordpress作為我分享特定內容的渠道。
-
-分享信用卡相關內容：[ismelet](http://www.ismeleft.com "點擊連結前往該站")
 
 同時也因此依賴了 Wordpress提供的各式外掛，例如：SEO外掛、文章表格外掛等等，所以現在的我就想，如果可以自己做部落格，一樣分享文章，然後去了解前端工程與 SEO之間的關係，應該會滿有趣的。
 
