@@ -30,14 +30,16 @@ export default async function BlogPage() {
       <h1 className="mt-10 mb-3 ">Blog Posts</h1>
       <hr />
       {posts.map((post) => (
-        <div key={post.slug}>
-          <div className="flex flex-wrap items-center gap-2 mb-2">
-            <h3 className="mr-3">{post.title}</h3>
-            <div>{post.date}</div>
+        <div key={post.slug} className=" mb-5 hover:shadow-lg p-2 rounded-xl">
+          <div className="flex flex-wrap items-center gap-2 mb-2 ">
+            <h3 className="mr-3">📌 {post.title}</h3>
+            <div>🗓️ {post.date}</div>
             <p>{post.description}</p>
           </div>
           <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
-            <div className="hover:text-blue-700">Read more ...</div>
+            <div className="hover:text-blue-700 cursor-pointer">
+              Read more ...
+            </div>
           </Link>
           <hr />
         </div>
