@@ -24,9 +24,13 @@ export default async function PostPage({ params }) {
   const post = await getPostData(slug);
 
   return (
-    <div
-      className="prose mx-auto max-w-[1200px] mt-10 w-10/12 p-8  "
-      dangerouslySetInnerHTML={{ __html: post.content }}
-    />
+    <div className="mx-auto max-w-[1200px] w-10/12 p-5">
+      <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
+      <p className="text-md text-gray-500 mb-8">{post.date}</p>
+      <div
+        className="prose"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      />
+    </div>
   );
 }

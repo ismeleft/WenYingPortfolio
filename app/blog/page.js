@@ -26,8 +26,8 @@ export default async function BlogPage() {
   const posts = await getPosts();
 
   return (
-    <div className="p-8 mx-auto max-w-[1200px] h-screen w-10/12">
-      <h1 className="mt-10 mb-3 ">Blog Posts</h1>
+    <div className="p-5 mx-auto max-w-[1200px] h-screen w-10/12">
+      <h1 className="mb-3 ">Blog Posts</h1>
       <hr />
       {posts.map((post) => (
         <div key={post.slug} className=" mb-5 hover:shadow-lg p-2 rounded-xl">
