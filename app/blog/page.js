@@ -19,7 +19,13 @@ async function getPosts() {
     };
   });
 
-  return posts;
+  return posts.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
 }
 
 export default async function BlogPage() {
