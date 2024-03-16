@@ -42,3 +42,7 @@ h3 {
   font-size: 20px;
   font-weight: 500;
 }
+
+.prose {
+  max-width: 80%;
+}
