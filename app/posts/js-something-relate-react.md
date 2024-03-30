@@ -10,11 +10,11 @@ tags: ["javascript","react","Destructuring assignment","spread&rest"]
 
 ## 陣列 / 物件的解構賦值、spread、rest
 
-<aside>
+
 💡 在 React 的使用場景：
 1. 解構賦值：props 的傳遞，方便快速建立變數取值、state、從hooks 中取值
 
-</aside>
+
 
 ```jsx
 const person={
@@ -148,11 +148,11 @@ function Form() {
 
 ### spread & rest
 
-<aside>
+
 💡 在 React 的使用場景：
 1. spread & rest 這兩個用法在之前有提及過，主要是與維持資料的 immutable，所做的資料拷貝有關。
 
-</aside>
+
 
 兩個看似都是`…` 的語法，實際上代表的意思是不同的。
 
@@ -176,11 +176,11 @@ const App = () => <Button onClick={() => alert('Clicked')} />;
 
 1. 在一個條件後面會跟著一個問號 (`?`)，如果條件是 [truthy (en-US)](https://developer.mozilla.org/en-US/docs/Glossary/Truthy)，在冒號(`:`)前的表達式會被執行，如果條件是 [falsy (en-US)](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)，在冒號後面的表達式會被執行，這個運算子常常被用來當作 `[if](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/if...else)` 的簡潔寫法
 
-<aside>
+
 💡 在 React 的使用場景：
 1. 常在 JSX中使用，例如用有條件的渲染方式。
 
-</aside>
+
 
 ```jsx
 const isLoggedIn = true;
@@ -196,11 +196,11 @@ return (
 
 ## ES module & `import` / `export`
 
-<aside>
+
 💡 在 React 的使用場景：
 常用於將元件、資料、hooks 做程式碼的區分管理，達到高複用性。
 
-</aside>
+
 
 ### Export
 
