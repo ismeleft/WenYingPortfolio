@@ -2,6 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
 
 const postsDirectory = path.join(process.cwd(), "app/posts");
 
@@ -10,7 +12,24 @@ async function getPostData(slug) {
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
-  const md = new MarkdownIt();
+  const md = new MarkdownIt({
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return (
+            '<pre class="hljs"><code>' +
+            hljs.highlight(str, { language: lang, ignoreIllegals: true })
+              .value +
+            "</code></pre>"
+          );
+        } catch (__) {}
+      }
+
+      return (
+        '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + "</code></pre>"
+      );
+    },
+  });
   const htmlContent = md.render(content);
 
   return {
