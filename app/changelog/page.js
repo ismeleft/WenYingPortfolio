@@ -9,6 +9,7 @@ const changelog = () => {
         <ul className="list-disc mt-3 flex flex-col gap-2">
           <li>2024-2-7 Change Website Layout</li>
           <li>2024-2 預計2月完成blog功能最簡易的layout</li>
+          <li>2024-4 新增 syntax highlighting --highlight.js</li>
         </ul>
       </div>
     </div>
