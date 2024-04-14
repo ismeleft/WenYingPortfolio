@@ -13,6 +13,13 @@ async function getPosts() {
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data } = matter(fileContents);
 
+    const dateObj = new Date(data.date);
+    data.date = dateObj.toLocaleDateString("zh-TW", {
+      year: "numeric",
+      month: "numeric",
+      day: "numeric",
+    });
+
     return {
       slug,
       ...data,
@@ -20,11 +27,7 @@ async function getPosts() {
   });
 
   return posts.sort((a, b) => {
-    if (a.date < b.date) {
-      return 1;
-    } else {
-      return -1;
-    }
+    return new Date(b.date) - new Date(a.date);
   });
 }
 
@@ -32,14 +35,17 @@ export default async function BlogPage() {
   const posts = await getPosts();
 
   return (
-    <div className="p-5 mx-auto max-w-[1200px]  w-10/12">
-      <h1 className="mb-3 ">Blog Posts</h1>
+    <div className="p-5 mx-auto max-w-[1200px] w-10/12">
+      <h1 className="mb-3">Blog Posts</h1>
       <hr />
       {posts.map((post) => (
-        <div key={post.slug} className=" mb-5 hover:shadow-lg p-2 rounded-xl">
-          <div className="flex flex-wrap items-center gap-2 mb-2 ">
+        <div key={post.slug} className="mb-5 hover:shadow-lg p-2 rounded-xl">
+          <div className="flex flex-wrap items-center gap-2 mb-2">
             <h3 className="mr-3">📌 {post.title}</h3>
-            <div>🗓️ {post.date}</div>
+            <div>
+              🗓️
+              {post.date}
+            </div>
             <p>{post.description}</p>
           </div>
           <Link href={`/blog/${encodeURIComponent(post.slug)}`}>
