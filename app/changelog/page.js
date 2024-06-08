@@ -10,6 +10,7 @@ const changelog = () => {
           <li>2024-2-7 Change Website Layout</li>
           <li>2024-2 預計2月完成blog功能最簡易的layout</li>
           <li>2024-4 新增 syntax highlighting --highlight.js</li>
+          <li>2024-6 新增部落格文章分頁</li>
         </ul>
       </div>
     </div>
