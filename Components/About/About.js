@@ -55,7 +55,10 @@ const About = () => {
                 React Hook <br />
                 React Context API <br />
                 Next.js <br />
+                Zustand <br />
+                Axios <br />
                 Tailwind CSS <br />
+                Material UI <br />
                 RWD <br />
               </p>
             </div>
