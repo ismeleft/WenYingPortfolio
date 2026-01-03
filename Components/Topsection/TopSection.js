@@ -25,7 +25,7 @@ const TopSection = () => {
             <button className="border rounded-full border-black px-6 py-2 text-sm sm:text-base">
               <a
                 target="_blank"
-                href="https://drive.google.com/file/d/1iPAS9KjpNqraeyJdMjzzNTC4X60VIRFE/view?usp=sharing"
+                href="https://drive.google.com/drive/folders/14RJ3rXDTk4ROtZqLvOWJRjA_QghcZbbV?usp=sharing"
               >
                 Download CV
               </a>
