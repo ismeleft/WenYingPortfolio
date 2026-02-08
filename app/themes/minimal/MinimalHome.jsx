@@ -34,7 +34,7 @@ export function MinimalHome() {
                 className="text-6xl md:text-7xl font-bold leading-tight"
                 style={{ color: "var(--color-text)" }}
               >
-                Hi, I'm
+                Hi, I&apos;m
                 <br />
                 <span style={{ color: "var(--color-primary)" }}>Wen Ying</span>
               </h1>
@@ -171,9 +171,8 @@ export function MinimalHome() {
           <AnimatedList className="grid md:grid-cols-2 gap-8" staggerDelay={0.15}>
             <AnimatedListItem>
               <div
-                className="p-8 rounded-2xl"
-                style={{ backgroundColor: "var(--color-surface)" }}
                 className="p-8 rounded-2xl border"
+                style={{ backgroundColor: "var(--color-surface)" }}
               >
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
                   style={{ backgroundColor: "var(--color-primary)", opacity: 0.1 }}
@@ -193,9 +192,8 @@ export function MinimalHome() {
 
             <AnimatedListItem>
               <div
-                className="p-8 rounded-2xl"
-                style={{ backgroundColor: "var(--color-surface)" }}
                 className="p-8 rounded-2xl border"
+                style={{ backgroundColor: "var(--color-surface)" }}
               >
                 <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6"
                   style={{ backgroundColor: "var(--color-primary)", opacity: 0.1 }}
