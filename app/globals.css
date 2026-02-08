@@ -46,3 +46,231 @@ h3 {
 .prose {
   max-width: 80%;
 }
+
+/* ==================== 極簡文章排版樣式 ==================== */
+
+.minimal-prose {
+  color: var(--color-text);
+  line-height: 1.8;
+  font-size: 1.0625rem; /* 17px */
+}
+
+.minimal-prose h1,
+.minimal-prose h2,
+.minimal-prose h3,
+.minimal-prose h4 {
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+
+.minimal-prose h1 {
+  font-size: 2.5em;
+}
+
+.minimal-prose h2 {
+  font-size: 2em;
+}
+
+.minimal-prose h3 {
+  font-size: 1.5em;
+}
+
+.minimal-prose h4 {
+  font-size: 1.25em;
+}
+
+.minimal-prose p {
+  margin-bottom: 1.8em;
+}
+
+.minimal-prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.minimal-prose a:hover {
+  opacity: 0.7;
+}
+
+.minimal-prose ul {
+  margin-bottom: 1.8em;
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+.minimal-prose ol {
+  margin-bottom: 1.8em;
+  padding-left: 1.5em;
+  list-style-type: decimal;
+}
+
+.minimal-prose li {
+  margin-bottom: 0.5em;
+  line-height: 1.8;
+  display: list-item;
+}
+
+.minimal-prose code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.minimal-prose pre {
+  margin: 2em 0;
+  padding: 1.5em;
+  border-radius: 8px;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+.minimal-prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 0.875em;
+}
+
+.minimal-prose blockquote {
+  margin: 2em 0;
+  padding-left: 1.5em;
+  border-left: 3px solid var(--color-primary);
+  color: var(--color-textSecondary);
+  font-style: italic;
+}
+
+.minimal-prose img {
+  max-width: 100%;
+  height: auto;
+  margin: 2em 0;
+  border-radius: 8px;
+}
+
+.minimal-prose hr {
+  margin: 3em 0;
+  border: none;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.minimal-prose table {
+  width: 100%;
+  margin: 2em 0;
+  border-collapse: collapse;
+}
+
+.minimal-prose th,
+.minimal-prose td {
+  padding: 0.75em;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.minimal-prose th {
+  background-color: rgba(0, 0, 0, 0.03);
+  font-weight: 600;
+}
+
+/* 深色模式下的程式碼區塊調整 */
+body.theme-minimal.dark .minimal-prose code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.theme-minimal.dark .minimal-prose th {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ==================== 主題系統 CSS 變數 ==================== */
+
+/* CSS 變數會由 ThemeProvider 動態設定 */
+:root {
+  /* 顏色變數 - 由 JS 動態注入 */
+  --color-primary: #6B7FD7;
+  --color-background: #E8EEF2;
+  --color-surface: #FFFFFF;
+  --color-text: #1A202C;
+  --color-textSecondary: #4A5568;
+  --color-border: #E2E8F0;
+  --color-accent: #5A67D8;
+
+  /* 樣式變數 */
+  --border-radius: 0.5rem;
+  --card-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* 主題專屬樣式覆蓋 */
+
+/* Minimal 主題 */
+body.theme-minimal {
+  /* 由 JS 動態設定背景色 */
+}
+
+body.theme-minimal.dark {
+  /* 深色模式樣式 */
+}
+
+/* GitHub icon 在深色模式下反轉顏色 */
+body.theme-minimal.dark .github-icon {
+  filter: invert(1);
+}
+
+/* Bento 主題 */
+body.theme-bento {
+  /* Bento 特有樣式 */
+}
+
+/* Signature 主題 */
+body.theme-signature {
+  /* 添加背景漸層 */
+  background-image: var(--color-gradient, none);
+}
+
+/* 通用主題樣式類別 */
+.theme-card {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.theme-text {
+  color: var(--color-text);
+}
+
+.theme-text-secondary {
+  color: var(--color-textSecondary);
+}
+
+.theme-border {
+  border-color: var(--color-border);
+}
+
+.theme-primary {
+  color: var(--color-primary);
+}
+
+.theme-bg-primary {
+  background-color: var(--color-primary);
+}
+
+/* 按鈕 hover 效果 - 為主題系統調整 */
+body button:not(.no-scale):hover {
+  transform: scale(1.05);
+}
+
+/* 減少動畫偏好設定支援 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

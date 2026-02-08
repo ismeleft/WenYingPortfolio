@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import PaginatedPosts from "../../Components/Pagination/Pagination";
+import MinimalBlogList from "@/Components/Blog/MinimalBlogList";
 
 const postsDirectory = path.join(process.cwd(), "app/posts");
 
@@ -34,11 +34,5 @@ async function getPosts() {
 export default async function BlogPage() {
   const posts = await getPosts();
 
-  return (
-    <div className="p-5 mx-auto max-w-[1200px] w-10/12">
-      <h1 className="mb-3">Blog Posts</h1>
-      <hr />
-      <PaginatedPosts posts={posts} />
-    </div>
-  );
+  return <MinimalBlogList posts={posts} />;
 }

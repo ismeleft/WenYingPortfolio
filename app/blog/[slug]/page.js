@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import MarkdownIt from "markdown-it";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
+import MinimalBlogPost from "@/Components/Blog/MinimalBlogPost";
 
 const postsDirectory = path.join(process.cwd(), "app/posts");
 
@@ -32,8 +33,17 @@ async function getPostData(slug) {
   });
   const htmlContent = md.render(content);
 
+  // 格式化日期
+  const dateObj = new Date(data.date);
+  const formattedDate = dateObj.toLocaleDateString("zh-TW", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return {
     ...data,
+    date: formattedDate,
     content: htmlContent,
   };
 }
@@ -42,14 +52,5 @@ export default async function PostPage({ params }) {
   const { slug } = params;
   const post = await getPostData(slug);
 
-  return (
-    <div className="mx-auto max-w-[1200px] w-10/12 p-5">
-      <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
-      <p className="text-md text-gray-500 mb-8">{post.date}</p>
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
-    </div>
-  );
+  return <MinimalBlogPost post={post} />;
 }
