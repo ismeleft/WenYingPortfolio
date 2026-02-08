@@ -2,7 +2,6 @@ import Footer from "@/Components/Footer/Footer";
 import "./globals.css";
 import { ThemedNav } from "@/Components/shared/ThemedNav";
 import { ThemeProvider } from "@/Components/shared/ThemeProvider";
-import { ThemeSwitcher } from "@/Components/theme-switcher/ThemeSwitcher";
 
 export const metadata = {
   title: "Wen Ying Portfolio",
@@ -26,7 +25,6 @@ export default function RootLayout({ children }) {
           <ThemedNav />
           {children}
           <Footer />
-          <ThemeSwitcher />
         </ThemeProvider>
       </body>
     </html>

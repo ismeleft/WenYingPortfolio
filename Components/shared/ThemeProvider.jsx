@@ -2,12 +2,10 @@
 
 import { createContext, useContext, useState, useEffect } from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { getTheme, defaultTheme, isValidTheme } from "@/lib/themes";
+import { getTheme } from "@/lib/themes";
 
 // 主題上下文
 const ThemeContext = createContext({
-  currentTheme: defaultTheme,
-  setTheme: () => {},
   themeConfig: null,
   isDarkMode: false,
   toggleDarkMode: () => {},
@@ -24,36 +22,20 @@ export function useTheme() {
 
 // ThemeProvider 元件
 export function ThemeProvider({ children }) {
-  // 主題狀態（minimal / bento / signature）
-  const [currentTheme, setCurrentTheme] = useState(defaultTheme);
-
   // 深色模式狀態
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // 主題配置
-  const themeConfig = getTheme(currentTheme);
+  // 主題配置（固定使用極簡主題）
+  const themeConfig = getTheme();
 
-  // 從 localStorage 載入主題偏好
+  // 從 localStorage 載入深色模式偏好
   useEffect(() => {
-    const savedTheme = localStorage.getItem("portfolio-theme");
     const savedDarkMode = localStorage.getItem("portfolio-dark-mode");
-
-    if (savedTheme && isValidTheme(savedTheme)) {
-      setCurrentTheme(savedTheme);
-    }
 
     if (savedDarkMode) {
       setIsDarkMode(savedDarkMode === "true");
     }
   }, []);
-
-  // 設定主題
-  const handleSetTheme = (themeId) => {
-    if (isValidTheme(themeId)) {
-      setCurrentTheme(themeId);
-      localStorage.setItem("portfolio-theme", themeId);
-    }
-  };
 
   // 切換深色模式
   const toggleDarkMode = () => {
@@ -85,12 +67,10 @@ export function ThemeProvider({ children }) {
     document.body.style.transition = "background-color 0.5s ease, color 0.5s ease";
 
     // 設定主題 class
-    document.body.className = `theme-${currentTheme} ${isDarkMode ? 'dark' : 'light'}`;
-  }, [currentTheme, isDarkMode, themeConfig]);
+    document.body.className = `theme-minimal ${isDarkMode ? 'dark' : 'light'}`;
+  }, [isDarkMode, themeConfig]);
 
   const value = {
-    currentTheme,
-    setTheme: handleSetTheme,
     themeConfig,
     isDarkMode,
     toggleDarkMode,
