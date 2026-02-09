@@ -5,15 +5,9 @@ import { useTheme } from "./ThemeProvider";
 
 /**
  * DarkModeToggle - 深色模式切換按鈕
- * 只在 minimal 主題顯示
  */
 export function DarkModeToggle({ className = "" }) {
-  const { isDarkMode, toggleDarkMode, currentTheme } = useTheme();
-
-  // 只在 minimal 主題顯示深色模式切換
-  if (currentTheme !== "minimal") {
-    return null;
-  }
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   return (
     <motion.button
