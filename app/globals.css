@@ -222,6 +222,15 @@ body.theme-minimal.dark .github-icon {
   filter: invert(1);
 }
 
+/* 導航列背景 - 根據主題切換 */
+.nav-background {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+body.theme-minimal.dark .nav-background {
+  background-color: rgba(26, 31, 46, 0.8);
+}
+
 /* Bento 主題 */
 body.theme-bento {
   /* Bento 特有樣式 */

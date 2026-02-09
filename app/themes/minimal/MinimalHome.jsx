@@ -13,9 +13,9 @@ import { DarkModeToggle } from "@/Components/shared/DarkModeToggle";
  */
 export function MinimalHome() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16 md:pt-20">
       {/* Hero Section */}
-      <section className="h-screen flex items-center justify-center px-4 relative">
+      <section className="min-h-screen flex items-center justify-center px-4 relative">
         <div className="max-w-6xl mx-auto w-full">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             {/* 左側：文字內容 */}
