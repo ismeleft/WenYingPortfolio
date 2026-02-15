@@ -7,12 +7,17 @@ import { AnimatedSection, AnimatedList, AnimatedListItem } from "@/Components/sh
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/animations";
 import { DarkModeToggle } from "@/Components/shared/DarkModeToggle";
 import { projects } from "@/data/projects";
+import { useLanguage } from "@/Components/shared/LanguageContext";
+import { translations } from "@/data/translations";
 
 /**
  * Minimal 主題 - 首頁
  * 現代極簡主義設計
  */
 export function MinimalHome() {
+  const { language } = useLanguage();
+  const t = translations[language];
+
   return (
     <div className="min-h-screen pt-16 md:pt-20">
       {/* Hero Section */}
@@ -28,14 +33,14 @@ export function MinimalHome() {
                 className="text-sm font-medium tracking-wider uppercase"
                 style={{ color: "var(--color-primary)" }}
               >
-                Frontend Developer
+                {t.hero.role}
               </motion.div>
 
               <h1
                 className="text-6xl md:text-7xl font-bold leading-tight"
                 style={{ color: "var(--color-text)" }}
               >
-                Hi, I&apos;m
+                {t.hero.greeting}
                 <br />
                 <span style={{ color: "var(--color-primary)" }}>Wen Ying</span>
               </h1>
@@ -44,8 +49,7 @@ export function MinimalHome() {
                 className="text-xl leading-relaxed max-w-lg"
                 style={{ color: "var(--color-textSecondary)" }}
               >
-                Building elegant web experiences with modern technologies.
-                Passionate about clean code and beautiful design.
+                {t.hero.bio}
               </p>
 
               {/* CTA 按鈕 */}
@@ -61,7 +65,7 @@ export function MinimalHome() {
                     color: "white",
                   }}
                 >
-                  Download CV
+                  {t.hero.downloadCv}
                 </motion.a>
 
                 <motion.a
@@ -74,7 +78,7 @@ export function MinimalHome() {
                     color: "var(--color-text)",
                   }}
                 >
-                  Contact Me
+                  {t.hero.contactMe}
                 </motion.a>
               </div>
 
@@ -152,19 +156,16 @@ export function MinimalHome() {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-20">
             <p className="text-sm font-medium tracking-wider uppercase mb-4" style={{ color: "var(--color-primary)" }}>
-              Get to know more
+              {t.about.label}
             </p>
             <h2 className="text-5xl font-bold mb-6" style={{ color: "var(--color-text)" }}>
-              About Me
+              {t.about.title}
             </h2>
           </AnimatedSection>
 
           <AnimatedSection animation={fadeInUp} className="mb-16">
             <p className="text-lg leading-relaxed text-center max-w-3xl mx-auto" style={{ color: "var(--color-textSecondary)" }}>
-              With over five years of cross-domain experience as a sales assistant,
-              I have honed my skills in solving complex problems. These experiences
-              have laid a solid foundation for my journey into front-end development,
-              especially in continuous learning and tackling technological challenges.
+              {t.about.bio}
             </p>
           </AnimatedSection>
 
@@ -181,12 +182,12 @@ export function MinimalHome() {
                   <Image src="/education.png" width={24} height={24} alt="Education" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--color-text)" }}>
-                  Education
+                  {t.about.education}
                 </h3>
                 <div style={{ color: "var(--color-textSecondary)" }}>
-                  <p className="mb-2">Sep 2013 - June 2017</p>
-                  <p className="font-medium">Chung Yuan Christian University</p>
-                  <p>Department of Psychology</p>
+                  <p className="mb-2">{t.about.educationDate}</p>
+                  <p className="font-medium">{t.about.educationSchool}</p>
+                  <p>{t.about.educationDept}</p>
                 </div>
               </div>
             </AnimatedListItem>
@@ -202,7 +203,7 @@ export function MinimalHome() {
                   <Image src="/skills.png" width={24} height={24} alt="Skills" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--color-text)" }}>
-                  Skills
+                  {t.about.skills}
                 </h3>
                 <div className="grid grid-cols-2 gap-6" style={{ color: "var(--color-textSecondary)" }}>
                   <div>
@@ -233,10 +234,10 @@ export function MinimalHome() {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-20">
             <p className="text-sm font-medium tracking-wider uppercase mb-4" style={{ color: "var(--color-primary)" }}>
-              Explore My
+              {t.experience.label}
             </p>
             <h2 className="text-5xl font-bold mb-6" style={{ color: "var(--color-text)" }}>
-              Experience
+              {t.experience.title}
             </h2>
           </AnimatedSection>
 
@@ -252,10 +253,10 @@ export function MinimalHome() {
                   <Image src="/coding.png" width={24} height={24} alt="Coding" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--color-text)" }}>
-                  Web Trainee
+                  {t.experience.webTrainee}
                 </h3>
                 <p style={{ color: "var(--color-textSecondary)" }}>
-                  Jul 2023 - Dec 2023
+                  {t.experience.webTraineeDate}
                   <br />
                   Wehelp Bootcamp 4th
                 </p>
@@ -273,10 +274,10 @@ export function MinimalHome() {
                   <Image src="/company.png" width={24} height={24} alt="Company" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--color-text)" }}>
-                  Sales Assistant
+                  {t.experience.salesAssistant}
                 </h3>
                 <p style={{ color: "var(--color-textSecondary)" }}>
-                  Jul 2018 - Nov 2023
+                  {t.experience.salesAssistantDate}
                   <br />
                   Max Vantage WH CO. LTD
                 </p>
@@ -291,10 +292,10 @@ export function MinimalHome() {
         <div className="max-w-6xl mx-auto">
           <AnimatedSection className="text-center mb-20">
             <p className="text-sm font-medium tracking-wider uppercase mb-4" style={{ color: "var(--color-primary)" }}>
-              Browse My
+              {t.projects.label}
             </p>
             <h2 className="text-5xl font-bold mb-6" style={{ color: "var(--color-text)" }}>
-              Projects
+              {t.projects.title}
             </h2>
           </AnimatedSection>
 
@@ -317,7 +318,7 @@ export function MinimalHome() {
                     {project.title}
                   </h3>
                   <p className="mb-4" style={{ color: "var(--color-textSecondary)" }}>
-                    {project.description}
+                    {language === "zh" ? project.description : project.descriptionEn}
                   </p>
                   <div className="flex flex-wrap justify-center gap-2 mb-6">
                     {project.techStack.map((tech) => (
@@ -343,7 +344,7 @@ export function MinimalHome() {
                         color: "var(--color-text)",
                       }}
                     >
-                      Live Demo
+                      {t.projects.liveDemo}
                     </motion.a>
                     <motion.a
                       href={project.github}
@@ -357,7 +358,7 @@ export function MinimalHome() {
                         color: "white",
                       }}
                     >
-                      GitHub
+                      {t.projects.github}
                     </motion.a>
                   </div>
                 </div>
@@ -372,10 +373,10 @@ export function MinimalHome() {
         <div className="max-w-4xl mx-auto">
           <AnimatedSection className="text-center mb-12">
             <p className="text-sm font-medium tracking-wider uppercase mb-4" style={{ color: "var(--color-primary)" }}>
-              Get in Touch
+              {t.contact.label}
             </p>
             <h2 className="text-5xl font-bold mb-6" style={{ color: "var(--color-text)" }}>
-              Contact Me
+              {t.contact.title}
             </h2>
           </AnimatedSection>
 
