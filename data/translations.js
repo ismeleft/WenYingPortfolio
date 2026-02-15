@@ -7,14 +7,13 @@ export const translations = {
     hero: {
       role: "前端工程師",
       greeting: "嗨，我是",
-      bio: "用現代技術打造優雅的網頁體驗，熱愛乾淨的程式碼與美好的設計。",
       downloadCv: "下載履歷",
       contactMe: "聯絡我",
     },
     about: {
       label: "更多關於我",
       title: "關於我",
-      bio: "擁有超過五年跨領域業務助理經驗，磨練了解決複雜問題的能力。這些經歷為我踏入前端開發之路奠定了堅實基礎，尤其在持續學習與應對技術挑戰方面。",
+      bio: "從業務助理跨域轉職前端工程師，累積兩年實務開發經驗。熟悉 React 生態系，包含 Vite、Zustand、Axios、Material UI 等工具。",
       education: "學歷",
       educationDate: "2013年9月 - 2017年6月",
       educationSchool: "中原大學",
@@ -24,6 +23,9 @@ export const translations = {
     experience: {
       label: "探索我的",
       title: "工作經歷",
+      frontendEngineer: "網頁前端工程師",
+      frontendEngineerDate: "2024年3月 - 至今",
+      frontendEngineerCompany: "弈樂科技",
       webTrainee: "網頁訓練生",
       webTraineeDate: "2023年7月 - 2023年12月",
       salesAssistant: "業務助理",
@@ -32,7 +34,7 @@ export const translations = {
     projects: {
       label: "瀏覽我的",
       title: "作品集",
-      liveDemo: "線上展示",
+      liveDemo: "Demo",
       github: "GitHub",
     },
     contact: {
@@ -48,14 +50,13 @@ export const translations = {
     hero: {
       role: "Frontend Developer",
       greeting: "Hi, I'm",
-      bio: "Building elegant web experiences with modern technologies. Passionate about clean code and beautiful design.",
       downloadCv: "Download CV",
       contactMe: "Contact Me",
     },
     about: {
       label: "Get to know more",
       title: "About Me",
-      bio: "With over five years of cross-domain experience as a sales assistant, I have honed my skills in solving complex problems. These experiences have laid a solid foundation for my journey into front-end development, especially in continuous learning and tackling technological challenges.",
+      bio: "A career-changer from sales to frontend development, with nearly two years of professional experience building web applications with React and modern tooling.",
       education: "Education",
       educationDate: "Sep 2013 - June 2017",
       educationSchool: "Chung Yuan Christian University",
@@ -65,6 +66,9 @@ export const translations = {
     experience: {
       label: "Explore My",
       title: "Experience",
+      frontendEngineer: "Frontend Engineer",
+      frontendEngineerDate: "Mar 2024 - Present",
+      frontendEngineerCompany: "Yile Technology",
       webTrainee: "Web Trainee",
       webTraineeDate: "Jul 2023 - Dec 2023",
       salesAssistant: "Sales Assistant",

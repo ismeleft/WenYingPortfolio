@@ -45,13 +45,6 @@ export function MinimalHome() {
                 <span style={{ color: "var(--color-primary)" }}>Wen Ying</span>
               </h1>
 
-              <p
-                className="text-xl leading-relaxed max-w-lg"
-                style={{ color: "var(--color-textSecondary)" }}
-              >
-                {t.hero.bio}
-              </p>
-
               {/* CTA 按鈕 */}
               <div className="flex gap-4 pt-4">
                 <motion.a
@@ -205,23 +198,23 @@ export function MinimalHome() {
                 <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--color-text)" }}>
                   {t.about.skills}
                 </h3>
-                <div className="grid grid-cols-2 gap-6" style={{ color: "var(--color-textSecondary)" }}>
-                  <div>
-                    <p className="font-bold mb-2" style={{ color: "var(--color-text)" }}>Frontend</p>
-                    <p className="text-sm leading-relaxed">
-                      React.js, Next.js<br />
-                      JavaScript, TypeScript<br />
-                      Tailwind CSS, Material UI
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-bold mb-2" style={{ color: "var(--color-text)" }}>Other</p>
-                    <p className="text-sm leading-relaxed">
-                      Git, GitHub<br />
-                      Python Flask<br />
-                      AWS EC2, Firebase
-                    </p>
-                  </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "React.js", "Next.js", "JavaScript", "Vite",
+                    "Tailwind CSS", "Material UI", "clsx", "Axios",
+                    "Jest", "Playwright",
+                    "Git", "GitHub", "GitLab CI/CD",
+                    "Python Flask", "AWS EC2", "Firebase",
+                    "Claude Code", "Chrome DevTools MCP", "Figma MCP",
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-xs px-3 py-1 rounded-full border"
+                      style={{ borderColor: "var(--color-border)", color: "var(--color-textSecondary)" }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
             </AnimatedListItem>
@@ -242,6 +235,27 @@ export function MinimalHome() {
           </AnimatedSection>
 
           <AnimatedList className="grid md:grid-cols-2 gap-8" staggerDelay={0.15}>
+            <AnimatedListItem>
+              <div
+                className="p-8 rounded-2xl border text-center"
+                style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
+              >
+                <div className="w-12 h-12 rounded-full flex items-center justify-center mb-6 mx-auto"
+                  style={{ backgroundColor: "var(--color-primary)", opacity: 0.1 }}
+                >
+                  <Image src="/coding.png" width={24} height={24} alt="Coding" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: "var(--color-text)" }}>
+                  {t.experience.frontendEngineer}
+                </h3>
+                <p style={{ color: "var(--color-textSecondary)" }}>
+                  {t.experience.frontendEngineerDate}
+                  <br />
+                  {t.experience.frontendEngineerCompany}
+                </p>
+              </div>
+            </AnimatedListItem>
+
             <AnimatedListItem>
               <div
                 className="p-8 rounded-2xl border text-center"

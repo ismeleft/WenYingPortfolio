@@ -5,7 +5,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children }) {
-  const [language, setLanguage] = useState("zh");
+  const [language, setLanguage] = useState("en");
 
   useEffect(() => {
     const saved = localStorage.getItem("portfolio-language");
