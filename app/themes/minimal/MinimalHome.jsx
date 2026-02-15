@@ -6,6 +6,7 @@ import Link from "next/link";
 import { AnimatedSection, AnimatedList, AnimatedListItem } from "@/Components/shared/AnimatedSection";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/animations";
 import { DarkModeToggle } from "@/Components/shared/DarkModeToggle";
+import { projects } from "@/data/projects";
 
 /**
  * Minimal 主題 - 首頁
@@ -298,103 +299,69 @@ export function MinimalHome() {
           </AnimatedSection>
 
           <AnimatedList className="grid md:grid-cols-2 gap-8" staggerDelay={0.15}>
-            <AnimatedListItem>
-              <div
-                className="p-8 rounded-2xl border text-center flex flex-col"
-                style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
-              >
-                <Image
-                  src="/1.png"
-                  width={300}
-                  height={300}
-                  alt="GratifyME project"
-                  className="mx-auto mb-6 rounded-xl"
-                />
-                <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--color-text)" }}>
-                  GratifyME
-                </h3>
-                <p className="mb-6" style={{ color: "var(--color-textSecondary)" }}>
-                  A Gratitude Journal Web Application
-                </p>
-                <div className="flex gap-3 justify-center mt-auto">
-                  <motion.a
-                    href="https://gratifyme.vercel.app/"
-                    target="_blank"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 rounded-lg font-medium border-2"
-                    style={{
-                      borderColor: "var(--color-border)",
-                      color: "var(--color-text)",
-                    }}
-                  >
-                    Live Demo
-                  </motion.a>
-                  <motion.a
-                    href="https://github.com/ismeleft/gratifyme"
-                    target="_blank"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 rounded-lg font-medium"
-                    style={{
-                      backgroundColor: "var(--color-primary)",
-                      color: "white",
-                    }}
-                  >
-                    GitHub
-                  </motion.a>
+            {projects.map((project) => (
+              <AnimatedListItem key={project.id}>
+                <div
+                  className="p-8 rounded-2xl border text-center flex flex-col"
+                  style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
+                >
+                  <Image
+                    src={project.thumbnail}
+                    width={300}
+                    height={200}
+                    alt={`${project.title} project`}
+                    className="mx-auto mb-6 rounded-xl object-cover"
+                  />
+                  <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--color-text)" }}>
+                    {project.title}
+                  </h3>
+                  <p className="mb-4" style={{ color: "var(--color-textSecondary)" }}>
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-2 mb-6">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className="text-xs px-3 py-1 rounded-full border"
+                        style={{ borderColor: "var(--color-border)", color: "var(--color-textSecondary)" }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-3 justify-center mt-auto">
+                    <motion.a
+                      href={project.liveDemo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-6 py-3 rounded-lg font-medium border-2"
+                      style={{
+                        borderColor: "var(--color-border)",
+                        color: "var(--color-text)",
+                      }}
+                    >
+                      Live Demo
+                    </motion.a>
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-6 py-3 rounded-lg font-medium"
+                      style={{
+                        backgroundColor: "var(--color-primary)",
+                        color: "white",
+                      }}
+                    >
+                      GitHub
+                    </motion.a>
+                  </div>
                 </div>
-              </div>
-            </AnimatedListItem>
-
-            <AnimatedListItem>
-              <div
-                className="p-8 rounded-2xl border text-center flex flex-col"
-                style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
-              >
-                <Image
-                  src="/2.png"
-                  width={300}
-                  height={300}
-                  alt="Taipei Day Trip project"
-                  className="mx-auto mb-6 rounded-xl"
-                />
-                <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--color-text)" }}>
-                  Taipei-Day-Trip
-                </h3>
-                <p className="mb-6" style={{ color: "var(--color-textSecondary)" }}>
-                  An e-commerce website about Taipei tourism.
-                </p>
-                <div className="flex gap-3 justify-center mt-auto">
-                  <motion.a
-                    href="http://52.192.139.251:3000/"
-                    target="_blank"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 rounded-lg font-medium border-2"
-                    style={{
-                      borderColor: "var(--color-border)",
-                      color: "var(--color-text)",
-                    }}
-                  >
-                    Live Demo
-                  </motion.a>
-                  <motion.a
-                    href="https://github.com/ismeleft/taipei-day-trip"
-                    target="_blank"
-                    whileHover={{ scale: 1.05, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="px-6 py-3 rounded-lg font-medium"
-                    style={{
-                      backgroundColor: "var(--color-primary)",
-                      color: "white",
-                    }}
-                  >
-                    GitHub
-                  </motion.a>
-                </div>
-              </div>
-            </AnimatedListItem>
+              </AnimatedListItem>
+            ))}
           </AnimatedList>
         </div>
       </section>
