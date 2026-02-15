@@ -1,5 +1,14 @@
 export const projects = [
   {
+    id: "longtermdonateidolplan",
+    title: "追星記帳",
+    description: "體驗 vibe coding 之長期資助海外藝術家",
+    thumbnail: "/projects/longtermdonateidolplan.png",
+    techStack: ["React", "Vite", "Firebase", "Framer Motion", "Cloudinary"],
+    liveDemo: "https://longtermdonateidolplan.vercel.app/",
+    github: "https://github.com/ismeleft/longtermdonateidolplan",
+  },
+  {
     id: "gratifyme",
     title: "GratifyME",
     description: "A Gratitude Journal Web Application",
