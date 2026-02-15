@@ -4,12 +4,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 import { DarkModeToggle } from "./DarkModeToggle";
+import { useLanguage } from "./LanguageContext";
+import { translations } from "@/data/translations";
 
 /**
  * ThemedNav - 根據主題渲染不同風格的導航列
  */
 export function ThemedNav() {
   const { currentTheme } = useTheme();
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language].nav;
 
   return (
     <motion.nav
@@ -37,11 +41,21 @@ export function ThemedNav() {
 
           {/* Navigation Links */}
           <div className="flex items-center gap-6">
-            <NavLink href="/blog">Blog</NavLink>
-            <NavLink href="/changelog">Changelog</NavLink>
-
-            {/* Dark Mode Toggle - 只在 Minimal 主題顯示 */}
+            <NavLink href="/blog">{t.blog}</NavLink>
+            <NavLink href="/changelog">{t.changelog}</NavLink>
             <DarkModeToggle />
+            <motion.button
+              onClick={toggleLanguage}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="text-sm font-medium px-3 py-1 rounded-full border-2 transition-all"
+              style={{
+                borderColor: "var(--color-primary)",
+                color: "var(--color-primary)",
+              }}
+            >
+              {language === "zh" ? "EN" : "中"}
+            </motion.button>
           </div>
         </div>
       </div>
