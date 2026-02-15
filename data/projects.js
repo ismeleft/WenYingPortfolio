@@ -2,10 +2,10 @@ export const projects = [
   {
     id: "zen",
     title: "Zen",
-    description: "冥想與呼吸練習網頁應用程式",
+    description: "冥想與呼吸練習網頁",
     descriptionEn: "A meditation and breathing exercise web application.",
     thumbnail: "/projects/zen.png",
-    techStack: ["React 19", "TypeScript", "Vite", "Vitest", "React Testing Library"],
+    techStack: ["React", "TypeScript", "Vite", "Vitest", "React Testing Library"],
     liveDemo: "https://zen-alpha.vercel.app/",
     github: "https://github.com/ismeleft/zen",
   },
