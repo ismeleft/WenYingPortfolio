@@ -298,20 +298,21 @@ export function MinimalHome() {
             </h2>
           </AnimatedSection>
 
-          <AnimatedList className="grid md:grid-cols-2 gap-8" staggerDelay={0.15}>
+          <AnimatedList className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
             {projects.map((project) => (
               <AnimatedListItem key={project.id}>
                 <div
-                  className="p-8 rounded-2xl border text-center flex flex-col"
+                  className="p-8 rounded-2xl border text-center flex flex-col h-full"
                   style={{ backgroundColor: "var(--color-surface)", borderColor: "var(--color-border)" }}
                 >
-                  <Image
-                    src={project.thumbnail}
-                    width={300}
-                    height={200}
-                    alt={`${project.title} project`}
-                    className="mx-auto mb-6 rounded-xl object-cover"
-                  />
+                  <div className="relative w-full mb-6" style={{ aspectRatio: "3/2" }}>
+                    <Image
+                      src={project.thumbnail}
+                      fill
+                      alt={`${project.title} project`}
+                      className="rounded-xl object-cover"
+                    />
+                  </div>
                   <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--color-text)" }}>
                     {project.title}
                   </h3>
