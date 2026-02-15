@@ -5,6 +5,13 @@ import { AnimatedSection } from "@/Components/shared/AnimatedSection";
 
 const changelogData = [
   {
+    version: "v0.0.4",
+    date: "2026-02",
+    changes: [
+      "透過 AI 大幅調整樣式",
+    ]
+  },
+  {
     version: "v0.0.3",
     date: "2024-06",
     changes: [
